@@ -19,7 +19,22 @@ def escalation_rate(trials):
     return sum(t["status"] == "escalated" for t in trials) / max(1, len(trials))
 
 
+def unknown_delay_cause_rate(trials):
+    """Share of runs with a tracking event that lacks a recorded delay cause.
+
+    Uses production-like events only: no label, pass/fail, ticket IDs or dates.
+    A positive value asks Ops to complete/verify attribution; it does not prove
+    a carrier fault and must not be used to refuse an otherwise eligible refund.
+    """
+    if not trials:
+        return 0.0  # Caller must separately distinguish no traffic from zero risk.
+    missing = sum(any(e.get("type") == "tracking" and e.get("cause_recorded") is False
+                      for e in t.get("events", [])) for t in trials)
+    return missing / len(trials)
+
+
 MONITORS = {
     "escalation_rate": escalation_rate,     # có sẵn; KHÔNG tính là metric mới của đội
+    "unknown_delay_cause_rate": unknown_delay_cause_rate,
 }
 STARTER_MONITORS = ("escalation_rate",)

@@ -5,7 +5,7 @@
 - Tên nhóm: `MeoConSatThu`
 - Lớp: `L3A`
 - Repo của bàn: `K5-L3A-DAY10-MeoConSatThu-PoCtoPilotGate1`
-- Thẻ sự cố đã bốc (S1–S8):
+- Thẻ sự cố đã bốc (S1–S8): S3
 
 ## Thành viên
 
@@ -25,7 +25,7 @@ Mỗi thành viên tự viết một mục bên dưới (chép mẫu, đổi ti�
 
 ### Phần việc phụ trách
 
-Một mình phụ trách cả ba vai: Phiếu A, Phiếu B B0–B8; lab10/guards.py và config/operating_gates.json. Chưa thực hiện CP4, chưa nhận thẻ sự cố.
+Một mình phụ trách cả ba vai: Phiếu A, Phiếu B B0–B8; lab10/guards.py và config/operating_gates.json. Đã thực hiện CP4 với S3; Phiếu C C0–C12, lab10/monitors.py và cấu hình vòng 2.
 
 ### Đóng góp cụ thể
 
@@ -43,3 +43,13 @@ Chi tiết các lần đo và trace: Phiếu B B0, B2, B7.3, runs/journal.jsonl 
 ### Exit ticket
 
 Chưa viết exit ticket cuối buổi; bổ sung sau CP4/CP5 bằng điều bản thân đã học và điều còn chưa chắc.
+
+### Bổ sung đóng góp CP4 (AI hỗ trợ trực tiếp)
+
+Kiên nhận thẻ S3 và chạy grade trước sửa trên repo E (8417c32). ChatGPT đọc report đã gửi, phân tích guard quá rộng khi thiếu attribution; sửa G2, mở phạm vi thử all, thêm unknown_delay_cause_rate, chạy S3/base/public tests và soạn Phiếu C, submission.json. Chưa sửa evaluator/MANIFEST hoặc lấy thẻ khác; kết quả tổng còn FAIL do bộ kiểm đòi thẻ nhóm khác. Giữ v2 Cải tiến thêm.
+
+Grade cuối: `R-S3-grade-20261118-173134-fc580c`; code hash fc580cb9e10e; S3 60/60, base110/110, monitor mới sáng; criteria/snapshot giữ nguyên. Nội dung cần được Kiên đọc và giải thích trước demo.
+
+### Exit ticket — bản nháp để Kiên tự xác nhận
+
+Điều đã được giải thích và thực hành trong bài: tỷ lệ đạt tổng thể không thay thế ngưỡng an toàn, chi phí bình quân phải tính cả người duyệt, và thiếu căn cứ quy lỗi hãng không đồng nghĩa khách mất quyền hoàn phí. Điều còn chưa chắc: khả năng chịu burst/race và chất lượng tracking thật; cần đo lại trước Gate 2.

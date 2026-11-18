@@ -1,12 +1,14 @@
 {
-  "team": "",
-  "members": [],
-  "incident": "",
-  "decision_v1": "",
-  "decision_v2": "",
+  "team": "K5-L3A-DAY10-MeoConSatThu-PoCtoPilotGate1",
+  "members": [
+    "NguyenSyHuyKien-2A202603641"
+  ],
+  "incident": "S3",
+  "decision_v1": "Thu hẹp",
+  "decision_v2": "Cải tiến thêm",
   "three_lines": {
-    "environment_assumption": "",
-    "reduce_or_prevent": "",
-    "measure_in_pilot": ""
+    "environment_assumption": "Thiết kế đang dựa vào ngày hiệu lực và tracking theo kiện được nhập đúng, cập nhật kịp thời; thực tế có thể thiếu nguyên nhân trễ, nhập bù hoặc có nhiều worker cùng ghi nên phải xác minh nguồn và giao dịch.",
+    "reduce_or_prevent": "Trong mô phỏng một luồng với DB đúng, cổng ngoài model ngăn ghi lỗi hãng khi thiếu căn cứ và ngăn hoàn vượt quyền lợi; ngoài thực tế chỉ giảm rủi ro nếu DB sai, phân quyền sai hoặc có race, nên không tuyên bố bảo đảm tuyệt đối.",
+    "measure_in_pilot": "Trước Gate 2 phải đo lại tỷ lệ thiếu nguyên nhân tracking, phản hồi đối soát/khiếu nại của hãng và khách, độ đúng của chính sách theo ngày, chi phí gồm người trực/kiểm mẫu, tải giờ cao điểm, SLA duyệt và thời gian dừng thực tế."
   }
 }

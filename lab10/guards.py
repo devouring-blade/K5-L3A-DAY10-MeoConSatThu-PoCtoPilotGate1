@@ -57,8 +57,10 @@ def write_gate(ctx, action):
             policy = H.effective_policy(ctx.tools.lookup_policies(), ctx.as_of)
             parcel = H.ticket_parcel(order, ctx.ticket, ctx.as_of)
             delay = H.db_delay_days(parcel, ctx.as_of)
-            if policy is None or (delay > 0 and not parcel.get("delay_cause")):
-                return Verdict.escalate("Thiếu chính sách hoặc nguyên nhân trễ được ghi nhận")
+            if policy is None:
+                return Verdict.escalate("Không có chính sách còn hiệu lực")
+            # Missing attribution is not a reason to reject an otherwise eligible refund.
+            # G3 separately requires recorded carrier responsibility before writing a fault.
             entitled = H.entitlement_vnd(policy, order, delay, parcel.get("delay_cause"))
         except (KeyError, ValueError, TypeError):
             return Verdict.escalate("Dữ liệu tracking/chính sách không đủ để cấp quyền ghi tiền")
