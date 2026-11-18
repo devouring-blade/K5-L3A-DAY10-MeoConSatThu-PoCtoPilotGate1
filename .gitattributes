@@ -1,0 +1,16 @@
+# Locked starter files must retain the LF bytes recorded by MANIFEST.json.
+* text eol=lf
+# The original signed Windows files used CRLF. Preserve their signed bytes on checkout.
+/config/acceptance_criteria.json text eol=crlf
+/config/acceptance_criteria.lock text eol=crlf
+# These unchanged editable inputs were originally checked out as CRLF.
+/lab10/monitors.py text eol=crlf
+/config/switches.json text eol=crlf
+# Freeze exact bytes for checkpoint inputs, snapshots and collected evidence.
+/lab10/guards.py -text
+/lab10/guards_round1.py -text
+/config/operating_gates.json -text
+/config/operating_gates.round1.json -text
+/config/round1.lock -text
+/runs/** -text
+/submission/** -text
