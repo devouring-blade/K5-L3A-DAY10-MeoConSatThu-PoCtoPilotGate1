@@ -40,16 +40,13 @@ Prepared: R-base-prepared-20261118-164857-29a8f5.
 Hash chốt vòng 1: 5c5bf8ae.
 Chi tiết các lần đo và trace: Phiếu B B0, B2, B7.3, runs/journal.jsonl và runs/cp3-evidence/.
 
-### Exit ticket
-
-Chưa viết exit ticket cuối buổi; bổ sung sau CP4/CP5 bằng điều bản thân đã học và điều còn chưa chắc.
-
 ### Bổ sung đóng góp CP4 (AI hỗ trợ trực tiếp)
 
 Kiên nhận thẻ S3 và chạy grade trước sửa trên repo E (8417c32). ChatGPT đọc report đã gửi, phân tích guard quá rộng khi thiếu attribution; sửa G2, mở phạm vi thử all, thêm unknown_delay_cause_rate, chạy S3/base/public tests và soạn Phiếu C, submission.json. Chưa sửa evaluator/MANIFEST hoặc lấy thẻ khác; kết quả tổng còn FAIL do bộ kiểm đòi thẻ nhóm khác. Giữ v2 Cải tiến thêm.
 
 Grade cuối: `R-S3-grade-20261118-173134-fc580c`; code hash fc580cb9e10e; S3 60/60, base110/110, monitor mới sáng; criteria/snapshot giữ nguyên. Nội dung cần được Kiên đọc và giải thích trước demo.
 
-### Exit ticket — bản nháp để Kiên tự xác nhận
+### Exit ticket
 
-Điều đã được giải thích và thực hành trong bài: tỷ lệ đạt tổng thể không thay thế ngưỡng an toàn, chi phí bình quân phải tính cả người duyệt, và thiếu căn cứ quy lỗi hãng không đồng nghĩa khách mất quyền hoàn phí. Điều còn chưa chắc: khả năng chịu burst/race và chất lượng tracking thật; cần đo lại trước Gate 2.
+- **Một điều học được:** Tỷ lệ đạt tổng thể cao vẫn có thể chứa lỗi an toàn nghiêm trọng. Vì vậy phải kiểm riêng tiền hoàn thừa, lỗi hãng oan và dữ liệu cá nhân; đồng thời tính công duyệt bình quân và năng lực người duyệt để tránh chuyển rủi ro từ AI sang nhân viên.
+- **Một điều còn chưa chắc:** Kết quả tốt trên mock chưa chứng minh được khả năng vận hành với tracking thật, lượng ticket dồn giờ cao điểm và nhiều worker cùng ghi sổ. Cần đo lại các yếu tố này trong pilot trước Gate 2.
